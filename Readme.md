@@ -1,8 +1,9 @@
 # 🏦 Loan Approval Prediction Web App
 
-An interactive, user-friendly **Streamlit web application** that predicts loan eligibility status based on historical applicant data and financial profiles. The app uses a pre-trained Machine Learning pipeline to evaluate risk parameters instantly.
+An interactive, user-friendly **Streamlit web application** that predicts loan eligibility status based on historical applicant data and financial profiles. The app leverages a pre-trained **Random Forest Classifier** machine learning model to evaluate risk parameters instantly.
 
 ## 🚀 Features
+- **Random Forest Machine Learning Engine**: Employs an ensemble learning framework optimized for handling non-linear relationships and interactions within credit data.
 - **Dynamic Risk Evaluation**: Captures applicant attributes like age, income, employment history, and credit scoring metrics.
 - **Automated Preprocessing**: Seamlessly handles real-time inputs, maps dummy-encoded categorical structures, and scales features dynamically using pre-saved pipeline modules.
 - **Instant Result Feedback**: Generates rapid approval (`✅ Loan Approved`) or rejection (`🚨 Loan Rejected`) statuses using an intuitive user interface.
@@ -11,7 +12,7 @@ An interactive, user-friendly **Streamlit web application** that predicts loan e
 Ensure your repository files are placed matching the following layout:
 ```text
 ├── app.py                # Main Streamlit application file
-├── model.pkl             # Pre-trained Machine Learning model 
+├── model.pkl             # Pre-trained Random Forest model 
 ├── scaler.pkl            # Pre-fitted data scaling/normalization pickle
 ├── columns.pkl           # Saved list containing original dummy-encoded feature shapes
 ├── requirements.txt      # Project Python dependencies
