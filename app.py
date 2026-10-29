@@ -12,6 +12,8 @@ st.title("Loan Approval Prediction")
 
 col1, col2 = st.columns(2)
 
+#Taking Input from client
+
 with col1:
     Age = st.number_input("Enter Your Age", min_value=0, max_value=130, step=1, value=18)
     Gender_select = st.selectbox("Gender", ["Male", "Female"])
@@ -32,6 +34,7 @@ with col2:
     Loan_Percentage = st.number_input("Loan-to-Income Percentage (Ratio)", min_value=0.0, max_value=1.0, value=min(default_pct, 1.0), step=0.01)
     Previous_Loan_select = st.radio("Has a Previous Loan?", ["No", "Yes"], horizontal=True)
 
+    #change raw_Input into pandas DataFrame
 raw_data = pd.DataFrame([{
     "Age": Age,
     "Gender": Gender,
@@ -48,11 +51,14 @@ raw_data = pd.DataFrame([{
     "Previous Loan_"+ Previous_Loan_select: 1
 }])
 df= pd.DataFrame(raw_data)
+
+#Adding the absent columns as value 0
 for col in Expected_col:
     if col not in df.columns:
         df[col] = 0
 df = df[Expected_col]
 
+#Standard Scaling the DataFrame for better result
 scaled_features = scaler.transform(df)
 
 st.markdown("---")
