@@ -34,7 +34,7 @@ with col2:
     Loan_Percentage = st.number_input("Loan-to-Income Percentage (Ratio)", min_value=0.0, max_value=1.0, value=min(default_pct, 1.0), step=0.01)
     Previous_Loan_select = st.radio("Has a Previous Loan?", ["No", "Yes"], horizontal=True)
 
-    #change raw_Input into pandas DataFrame
+    #change raw_Input into ~pandas DataFrame
 raw_data = pd.DataFrame([{
     "Age": Age,
     "Gender": Gender,
